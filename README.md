@@ -2,7 +2,7 @@
 
 The website for **Bluepine Studio**, my freelance web design service for small local businesses in and around Wembley, London.
 
-**Live site:** https://janvipatel1910.github.io/portfolio/
+**Live site:** https://janvipatel1910.github.io/bluepine-studio/
 
 ## What the site includes
 
@@ -17,11 +17,11 @@ Full sample websites for different types of local business. The businesses, name
 
 | Template | What it shows | Link |
 |---|---|---|
-| Restaurant | Menu with tabs, table booking, opening hours for the restaurant and the bar | [Open](https://janvipatel1910.github.io/portfolio/templates/restaurant/) |
-| QR table menu | Guests scan a QR code, order from their phone, call a waiter or ask for the bill | [Open](https://janvipatel1910.github.io/portfolio/templates/restaurant/table.html?t=5) |
-| Salon | Hair, nails and beauty price list, team and booking form | [Open](https://janvipatel1910.github.io/portfolio/templates/salon/) |
-| Clinic | Treatments, fees, emergency information and appointment requests | [Open](https://janvipatel1910.github.io/portfolio/templates/clinic/) |
-| Grocer | Weekly offers, product range and WhatsApp ordering | [Open](https://janvipatel1910.github.io/portfolio/templates/grocer/) |
+| Restaurant | Menu with tabs, table booking, opening hours for the restaurant and the bar | [Open](https://janvipatel1910.github.io/bluepine-studio/templates/restaurant/) |
+| QR table menu | Guests scan a QR code, order from their phone, call a waiter or ask for the bill | [Open](https://janvipatel1910.github.io/bluepine-studio/templates/restaurant/table.html?t=5) |
+| Salon | Hair, nails and beauty price list, team and booking form | [Open](https://janvipatel1910.github.io/bluepine-studio/templates/salon/) |
+| Clinic | Treatments, fees, emergency information and appointment requests | [Open](https://janvipatel1910.github.io/bluepine-studio/templates/clinic/) |
+| Grocer | Weekly offers, product range and WhatsApp ordering | [Open](https://janvipatel1910.github.io/bluepine-studio/templates/grocer/) |
 
 The forms and the QR ordering are front-end demos only. They don't send data anywhere yet.
 
@@ -33,7 +33,7 @@ The forms and the QR ordering are front-end demos only. They don't send data any
 ## Folder structure
 
 ```
-portfolio/
+bluepine-studio/
 ├── index.html                 # Bluepine Studio homepage
 └── templates/
     ├── restaurant/
@@ -47,8 +47,8 @@ portfolio/
 ## Run it on your computer
 
 ```
-git clone https://github.com/janvipatel1910/portfolio.git
-cd portfolio
+git clone https://github.com/janvipatel1910/bluepine-studio.git
+cd bluepine-studio
 python -m http.server 8000
 ```
 
