@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Northwick Dental Care – demo website by Bluepine Studio</title>
+<meta name="description" content="Northwick Dental Care – family dental clinic in Wembley. Treatments, fees, emergency appointments.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+:root{--bg:#F7FAFB;--surface:#FFFFFF;--ink:#0F2A33;--muted:#5A707A;--line:#DDE8EC;--accent:#0E7C86;--accent-ink:#fff;--soft:#E1F2F3;--display:'Plus Jakarta Sans',system-ui,sans-serif;--body:'Plus Jakarta Sans',system-ui,sans-serif;--dw:800;--r:16px;--btnr:12px}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--body)}
+img,svg{display:block;max-width:100%}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0;font-weight:var(--dw,700)}
+h1{font-size:clamp(2.3rem,5.4vw,4rem);letter-spacing:-.02em}
+h2{font-size:clamp(1.7rem,3.4vw,2.5rem);letter-spacing:-.01em}
+h3{font-size:1.12rem}
+p{margin:0}
+a{color:inherit}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+section{padding-block:clamp(56px,8vw,96px)}
+.eyebrow{font:600 .78rem/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.lede{color:var(--muted);font-size:1.08rem;max-width:58ch}
+.head{display:grid;gap:12px;margin-bottom:36px;max-width:680px}
+.muted{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:var(--btnr,999px);font:600 .98rem var(--body);text-decoration:none;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.sm{padding:9px 16px;font-size:.9rem}
+/* ribbon */
+.ribbon{background:var(--ink);color:var(--bg);font-size:.82rem;text-align:center;padding:8px 16px}
+.ribbon a{color:inherit;font-weight:600}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.brand{font:var(--dw,700) 1.3rem/1 var(--display);text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand i{width:12px;height:12px;border-radius:50%;background:var(--accent);display:inline-block}
+.links{display:flex;align-items:center;gap:24px}
+.links a:not(.btn){text-decoration:none;color:var(--muted);font-weight:500;font-size:.95rem}
+.links a:not(.btn):hover{color:var(--ink)}
+/* hero */
+.hero{padding-block:clamp(44px,7vw,88px);background:var(--hero,var(--bg))}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center}
+.hero-copy{display:grid;gap:22px;justify-items:start}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.art{aspect-ratio:1/1;border-radius:var(--artr,28px);overflow:hidden;background:var(--soft);position:relative}
+.art svg{width:100%;height:100%}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.badges span{font-size:.85rem;font-weight:500;padding:6px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line)}
+/* info strip */
+.info{border-block:1px solid var(--line);background:var(--surface);padding:0}
+.info .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
+.info div{padding:22px 20px;display:grid;gap:2px}
+.info div+div{border-left:1px solid var(--line)}
+.info b{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.info span{font-weight:600}
+.open-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#22A35A;margin-right:6px;vertical-align:middle}
+/* cards */
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r,18px);padding:24px;display:grid;gap:10px;align-content:start}
+.card .ico{width:44px;height:44px;border-radius:12px;background:var(--soft);color:var(--accent);display:grid;place-items:center}
+.card .ico svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.card p{color:var(--muted);font-size:.95rem}
+.price{font:700 1.05rem var(--body);color:var(--ink)}
+/* list with leaders */
+.list{display:grid;gap:0}
+.row{display:grid;grid-template-columns:1fr auto;gap:6px 16px;padding:16px 0;border-bottom:1px dashed var(--line)}
+.row h3{font-size:1.05rem}
+.row p{grid-column:1/-1;color:var(--muted);font-size:.92rem}
+.row .p{font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.tag{display:inline-block;font:700 .66rem/1 var(--body);letter-spacing:.06em;padding:4px 6px;border-radius:6px;background:var(--soft);color:var(--accent);margin-left:6px;vertical-align:middle}
+/* tabs */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.tabs button{font:600 .92rem var(--body);padding:9px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.panel[hidden]{display:none}
+/* split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,56px);align-items:start}
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gallery div{aspect-ratio:1;border-radius:14px;display:grid;place-items:end start;padding:12px;font-size:.8rem;font-weight:600;color:#fff}
+.gallery div:nth-child(1){grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+/* team */
+.person{display:grid;gap:6px;justify-items:start}
+.avatar{width:64px;height:64px;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font:700 1.2rem var(--display)}
+/* form */
+form{background:var(--surface);border:1px solid var(--line);border-radius:var(--r,18px);padding:clamp(20px,3vw,30px);display:grid;gap:14px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:grid;gap:6px;font-weight:600;font-size:.9rem}
+input,select,textarea{font:400 1rem var(--body);color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:11px 12px;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+.ok{display:none;padding:12px 14px;border-radius:10px;background:var(--soft);font-size:.92rem}
+form.sent .ok{display:block}
+/* hours */
+.hours{display:grid;gap:0}
+.hours div{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+.hours div.today{font-weight:700;color:var(--accent)}
+/* map */
+.map{border-radius:var(--r,18px);overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;background:var(--soft)}
+/* faq */
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:18px 0;font-weight:600;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--accent);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);padding-bottom:18px}
+/* footer */
+footer{background:var(--ink);color:color-mix(in srgb,var(--bg) 75%,transparent);padding-block:44px 110px;font-size:.92rem}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
+footer strong{color:var(--bg);font-family:var(--display);font-size:1.2rem}
+footer a{color:inherit}
+.credit{grid-column:1/-1;border-top:1px solid color-mix(in srgb,var(--bg) 18%,transparent);padding-top:18px;font-size:.84rem}
+/* mobile action bar */
+.actionbar{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:30;display:none;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:8px;border-radius:18px;background:var(--surface);border:1px solid var(--line);box-shadow:0 18px 40px -18px rgba(0,0,0,.35)}
+.actionbar a{padding:11px 4px;font-size:.88rem}
+@media (max-width:820px){
+  .hero .wrap,.split{grid-template-columns:1fr}
+  .art{aspect-ratio:16/10}
+  .links{display:none}
+  .info .wrap{grid-template-columns:1fr}
+  .info div+div{border-left:0;border-top:1px solid var(--line)}
+  .gallery{grid-template-columns:1fr 1fr}
+  footer .wrap{grid-template-columns:1fr}
+  .actionbar{display:grid}
+  .f2{grid-template-columns:1fr}
+}
+
+.emergency{background:var(--ink);color:#fff;border-radius:16px;padding:20px 24px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}.emergency p{color:#C8DCE0}.emergency .btn{background:#fff;color:var(--ink);border-color:#fff}
+</style>
+</head>
+<body>
+<div class="ribbon">Demo website with a made-up business, names and prices. Designed by <a href="../../">Bluepine Studio</a>, and yours can look like this.</div>
+<nav><div class="wrap">
+  <a class="brand" href="#top"><i></i>Northwick Dental Care</a>
+  <div class="links"><a href="#treatments">Treatments</a><a href="#fees">Fees</a><a href="#visit">Find us</a><a class="btn primary sm" href="#book">Book appointment</a></div>
+</div></nav>
+<main id="top">
+
+<header class="hero"><div class="wrap">
+  <div class="hero-copy">
+    <span class="eyebrow">Family dental clinic · Wembley</span>
+    <h1>Healthy smiles, without the worry.</h1>
+    <p class="lede">Check-ups, hygiene, fillings and cosmetic treatments in a calm, modern clinic. Nervous patients are always welcome.</p>
+    <div class="cta"><a class="btn primary" href="#book">Book an appointment</a><a class="btn" href="#fees">See our fees</a></div>
+    <div class="badges"><span>New patients welcome</span><span>Step-free access</span><span>Evening appointments</span></div>
+  </div>
+  <div class="art"><svg viewBox="0 0 400 400" aria-hidden="true">
+    <rect width="400" height="400" fill="#E1F2F3"/>
+    <circle cx="200" cy="200" r="150" fill="#C6E7EA"/>
+    <path d="M200 120c-20-18-62-22-76 8-14 30 4 62 10 88 6 30 6 70 24 72 18 2 18-48 42-48s24 50 42 48c18-2 18-42 24-72 6-26 24-58 10-88-14-30-56-26-76-8z" fill="#fff" stroke="#0E7C86" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M300 100v40M280 120h40" stroke="#0E7C86" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="105" cy="300" r="10" fill="#0E7C86" opacity=".4"/>
+  </svg></div>
+</div></header>
+<section class="info"><div class="wrap">
+  <div><b>Today</b><span><i class="open-dot"></i>Open 8:30 – 18:00</span></div>
+  <div><b>Reception</b><span>020 7946 0789</span></div>
+  <div><b>Dental pain?</b><span>Same-day emergency slots</span></div>
+</div></section>
+<section id="treatments"><div class="wrap">
+  <div class="head"><span class="eyebrow">Treatments</span><h2>Care for every stage of life</h2></div>
+  <div class="grid">
+    <div class="card"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Check-ups</h3><p>A full examination with advice on keeping your teeth and gums healthy.</p></div>
+    <div class="card"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/></svg></div><h3>Hygienist</h3><p>Scale and polish to remove plaque and stains.</p></div>
+    <div class="card"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></div><h3>Children's dentistry</h3><p>Friendly first visits to help children feel relaxed.</p></div>
+    <div class="card"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></div><h3>Whitening</h3><p>Professional home whitening, after a check-up.</p></div>
+    <div class="card"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Emergency care</h3><p>Same-day appointments for pain, swelling or broken teeth.</p></div>
+    <div class="card"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4.5" r="1.8"/><path d="M6 8h12M12 8v6l-3 6M12 14l3 6"/></svg></div><h3>Accessible clinic</h3><p>Ground-floor surgery, step-free entrance and an accessible toilet.</p></div>
+  </div>
+  <div class="emergency" style="margin-top:28px"><div><h3>In pain right now?</h3><p>Call before 10am for a same-day emergency appointment.</p></div><a class="btn" href="tel:02079460789">Call 020 7946 0789</a></div>
+</div></section>
+<section id="fees" style="background:var(--surface)"><div class="wrap split">
+  <div class="head"><span class="eyebrow">Private fees</span><h2>Clear prices, no surprises</h2><p class="lede">Your dentist will explain your treatment plan and its cost before any work begins. Prices shown are examples for this demo.</p></div>
+  <div class="list"><div class="row"><h3>New patient examination</h3><span class="p">£55</span><p>Includes X-rays if needed.</p></div><div class="row"><h3>Routine check-up</h3><span class="p">£40</span><p>Every 6–12 months.</p></div><div class="row"><h3>Hygienist visit</h3><span class="p">£65</span><p>30-minute appointment.</p></div><div class="row"><h3>White filling</h3><span class="p">from £95</span><p>Tooth-coloured filling.</p></div><div class="row"><h3>Emergency appointment</h3><span class="p">£75</span><p>Assessment and pain relief.</p></div><div class="row"><h3>Home whitening</h3><span class="p">£295</span><p>Custom trays and gel.</p></div></div>
+</div></section>
+<section id="book"><div class="wrap split">
+  <div style="display:grid;gap:24px">
+    <div class="head" style="margin:0"><span class="eyebrow">Appointments</span><h2>Request an appointment</h2><p class="lede">Our reception team will call you back to confirm a time. Please don't use this form for medical emergencies: call NHS 111 or 999.</p></div>
+    <div>
+      <details><summary>Do you take new patients?</summary><p>Yes. Book a new patient examination and bring a list of any medicines you take.</p></details>
+      <details><summary>I'm nervous about the dentist. Can you help?</summary><p>Tell us when you book. We'll give you extra time and explain every step.</p></details>
+      <details><summary>Can I pay monthly?</summary><p>We offer payment plans for larger treatments. Ask at reception.</p></details>
+    </div>
+  </div>
+  <form>
+    <label>Appointment type<select><option>New patient examination</option><option>Check-up</option><option>Hygienist</option><option>Emergency / pain</option><option>Whitening consultation</option></select></label>
+    <div class="f2"><label>Full name<input type="text" required></label><label>Phone<input type="tel" required placeholder="07…"></label></div>
+    <label>Best time to call you back<select><option>Morning</option><option>Afternoon</option><option>Any time</option></select></label>
+    <button class="btn primary" type="submit">Send request</button>
+    <p class="ok">Demo only: on a real website this request would go to the clinic's reception.</p>
+  </form>
+</div></section>
+<section id="visit"><div class="wrap split">
+  <div style="display:grid;gap:22px">
+    <div class="head" style="margin:0"><span class="eyebrow">Find us</span><h2>Opening hours &amp; location</h2><p class="lede">5 Northwick Parade, Wembley HA9 8XY</p></div>
+    <div class="hours"><div data-d="1"><span>Monday</span><span>8:30 – 18:00</span></div><div data-d="2"><span>Tuesday</span><span>8:30 – 18:00</span></div><div data-d="3"><span>Wednesday</span><span>8:30 – 20:00</span></div><div data-d="4"><span>Thursday</span><span>8:30 – 18:00</span></div><div data-d="5"><span>Friday</span><span>8:30 – 17:00</span></div><div data-d="6"><span>Saturday</span><span>9:00 – 13:00</span></div><div data-d="0"><span>Sunday</span><span>Closed</span></div></div>
+    <p class="muted">Nearest station: Northwick Park (Metropolitan line). Free parking for two hours on Northwick Avenue.</p>
+  </div>
+  <div class="map"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-label="Map placeholder">
+<rect width="400" height="300" fill="var(--soft)"/>
+<g stroke="var(--surface)" stroke-width="14" fill="none" stroke-linecap="round"><path d="M-10 90 L410 120"/><path d="M-10 230 L410 200"/><path d="M120 -10 L150 310"/><path d="M290 -10 L260 310"/></g>
+<g stroke="var(--surface)" stroke-width="6" fill="none"><path d="M-10 160 L410 165"/><path d="M60 -10 L80 310"/><path d="M350 -10 L340 310"/></g>
+<circle cx="205" cy="150" r="26" fill="#0E7C86" opacity=".18"/><path d="M205 118c-13 0-22 9-22 21 0 16 22 37 22 37s22-21 22-37c0-12-9-21-22-21z" fill="#0E7C86"/><circle cx="205" cy="139" r="7" fill="#fff"/></svg></div>
+</div></section>
+
+</main>
+<footer><div class="wrap">
+  <div style="display:grid;gap:10px"><strong>Northwick Dental Care</strong><p>Gentle, modern dentistry for the whole family.</p></div>
+  <div style="display:grid;gap:6px"><b style="color:var(--bg)">Visit</b><span>5 Northwick Parade, Wembley HA9 8XY</span></div>
+  <div style="display:grid;gap:6px"><b style="color:var(--bg)">Contact</b><a href="tel:02079460789">020 7946 0789</a><span>reception@northwickdental.example</span></div>
+  <p class="credit">This is a sample website. The business, people, phone number and prices are made up. Website by <a href="../../">Bluepine Studio</a>.</p>
+</div></footer>
+<div class="actionbar">
+  <a class="btn" href="tel:02079460789">Call</a>
+  <a class="btn" href="#visit">Directions</a>
+  <a class="btn primary" href="#book">Book</a>
+</div>
+<script>
+document.querySelectorAll('[role=tablist]').forEach(function(list){
+  var btns=[].slice.call(list.querySelectorAll('button'));
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){var on=x===b;x.setAttribute('aria-selected',on);document.getElementById(x.getAttribute('aria-controls')).hidden=!on});
+  })});
+});
+document.querySelectorAll('form').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();f.classList.add('sent')})});
+(function(){var d=new Date().getDay();document.querySelectorAll('.hours [data-d="'+d+'"]').forEach(function(r){r.classList.add('today')})})();
+</script>
+</body>
+</html>
